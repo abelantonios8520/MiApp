@@ -66,5 +66,17 @@
             android:text="Email" />
 
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImagePedio"
+            android:layout_width="40dp"
+            android:layout_height="38dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ic_arrow_img"
+            app:civ_circle_background_color="@color/colorGreen" />
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

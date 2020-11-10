@@ -17,12 +17,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
     private EditText editTextPhone;
     Button btnNavegador;
     Button btnMapas;
     ImageButton btnLamar;
     Button btnMail;
+    private CircleImageView mcircleImagePedio;
     private final int TEL_COD = 100;
 
     @Override
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnLamar = findViewById(R.id.imageButtonPhone);
         btnMail = findViewById(R.id.btnMail);
         editTextPhone=(EditText) findViewById(R.id.editTextPhone);
+        mcircleImagePedio = findViewById(R.id.circleImagePedio);
 
         btnLamar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
                 if(result == PackageManager.PERMISSION_GRANTED){
                     startActivity(intentCall);}
                 else{Toast.makeText(MainActivity.this, "Acceso no Autorizado", Toast.LENGTH_LONG).show();}
+            }
+        });
+
+        mcircleImagePedio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EnviarSms.class);
+                startActivity(intent);
             }
         });
     }
